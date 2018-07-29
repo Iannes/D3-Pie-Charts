@@ -1,0 +1,8 @@
+# Application
+node_modules
+.vscode
+# Dotenv
+.env
+.env.*
+# Local
+.DS_Store
