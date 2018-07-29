@@ -2,7 +2,7 @@
 ```
 Run npm install or yarn from the root directory.
 ```
-To run the server, type `npm run start` or `yarn start`. This will fire up the dev server on `http://localhost:8080/'
+To fire up the dev server on `http://localhost:8080/', type `npm run start` or `yarn start` from the app's root directory.
 
 To run the Jasmine test, type `npm run test` or `yarn test`.
 
