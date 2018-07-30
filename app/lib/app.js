@@ -3,9 +3,9 @@ import { appendPath } from './components/path.js'
 import { titles } from './components/titles.js'
 import { border } from './components/borders.js'
 import { cross } from './components/cross.js'
-import { renderDevice } from './controllers/renderDevice.js'
-import { renderNumbers } from './controllers/numbers.js'
-import { renderTotals } from './controllers/totals.js'
+import { renderDevice } from './views/renderDevice.js'
+import { renderNumbers } from './views/numbers.js'
+import { renderTotals } from './views/totals.js'
 
 export default class App {
 
