@@ -15,6 +15,7 @@ export default class App {
     // TODO -> set dotenv and set base_url according to environment
     const base_url = 'http://localhost:8080'
     const db_path = `${base_url}/db.json`;
+    // TODO -> Use Object.keys from to generate titles directly from the database
     const titlesArr = ['Revenue', 'Impressions', 'Visits']
     const devices = ['Tablet', 'Smartphone']
 
@@ -51,6 +52,7 @@ export default class App {
         appendPath(svg, pie, arc)
         titles(svg, titlesArr, -20, 0, 'middle')
         border(svg)
+        // TODO -> make use of a helper function to call this only once
         cross(svg, -88, 0)
         cross(svg, 88, 0)
         cross(svg, 0, -88)
