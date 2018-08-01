@@ -8,8 +8,10 @@ export const titles = (element, titlesArr, dy, dx, textAnchor) => {
 
   element.append("text")
     .attr("class", "total-amount")
-    .text((d, i) => d[6])
+    .text((d) => d[6])
     .attr("dy", dy + 50)
     .attr("dx", dx)
     .attr("text-anchor", textAnchor)
+
+    console.log('Here')
 }

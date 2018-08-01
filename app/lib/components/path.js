@@ -5,4 +5,6 @@ export const appendPath = (svg, pie, arc) => {
       .append("path")
       .attr("id", (d, i) => `doughnut-chart-path-${i}`)
       .attr("d", arc)
+      .attr("transform", "rotate(145)")
+
 }

@@ -1,24 +1,16 @@
 import * as d3 from "d3";
-import { appendPath } from './components/path.js'
-import { titles } from './components/titles.js'
-import { border } from './components/borders.js'
-import { cross } from './components/cross.js'
-import { renderDevice } from './views/renderDevice.js'
-import { renderNumbers } from './views/numbers.js'
-import { renderTotals } from './views/totals.js'
+import {appendPath, titles, border, cross} from './components';
+import {renderDevice, renderNumbers, renderTotals} from './views';
 
 export default class App {
 
   renderPieCharts (m, r, width, height) {
-
-    const data = [];
     // TODO -> set dotenv and set base_url according to environment
+    const data = [];
     const base_url = 'http://localhost:8080'
     const db_path = `${base_url}/db.json`;
-    // TODO -> Use Object.keys from to generate titles directly from the database
     const titlesArr = ['Revenue', 'Impressions', 'Visits']
     const devices = ['Tablet', 'Smartphone']
-
     const radius = Math.min(width, height) / 2;
 
     d3.json(db_path)
@@ -31,14 +23,16 @@ export default class App {
               .data(data)
             .enter()
               .append("svg")
-              .attr("width", (r + m) * 5)
-              .attr("height", (r + m) * 5)
+              // .attr("viewBox", "-100 0 600 500")
+              .attr('viewBox','-100 0 '+ Math.min(width, height) * 2 +' '+ Math.min(width,height) )
+              .attr("preserveAspectRatio", "xMinYMin meet")
+              .attr("width", (r + m) * 4)
+              .attr("height", (r + m) * 3)
               .attr("class", () => `doughnut-chart`)
-              //Dynamically create id s to style with css | TODO -> Create array of colors to assign them dynamically using D3
+              //Dynamically create id s to style with css
               .attr("id", (d, i) => `doughnut-chart-${i}`)
               .append("g")
               .attr("id", (d, i) => `doughnut-chart-g-${i}`)
-              // TODO -> Use viewbox and make all pies responsive
               .attr("transform", "translate(" + (r + m )+ "," + (r + m) + ")");
 
         const pie = d3.pie()
@@ -47,8 +41,9 @@ export default class App {
 
         const arc = d3.arc()
           .outerRadius(radius - 60)
-          .innerRadius(radius - 50);
-        // Call all helper functions to sprinkle data
+          .innerRadius(radius - 50)
+
+        // Call all helper functions to sprinkle our data
         appendPath(svg, pie, arc)
         titles(svg, titlesArr, -20, 0, 'middle')
         border(svg)
@@ -63,4 +58,11 @@ export default class App {
     })
     .catch((error) => console.error(`There was an error with your request ${error}`))
   }
+
+
+  init () {
+    console.log('App Initialized!')
+    this.renderPieCharts(40,100,300,300);
+  }
+
 }

@@ -30,8 +30,8 @@ main {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  max-width: 1400px;
   margin: auto;
+
 }
 
 .percentage {
@@ -44,17 +44,22 @@ main {
   opacity: 0.3;
 }
 
-@media only screen and (max-width:1300px) {
+@media only screen and (max-width:640px) {
   #pieData {
 
       flex-direction: column;
       margin: auto;
     }
+
+
+    svg {
+      width: 300px;
+    }
 }
 
-.doughnut-chart {
+/* .doughnut-chart {
   padding: 30px;
-}
+} */
 g#doughnut-chart-g-0 #doughnut-chart-path-0 {
   fill: #3f6a10;
   fill: #97d649;
