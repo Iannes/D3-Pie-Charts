@@ -12,6 +12,4 @@ export const titles = (element, titlesArr, dy, dx, textAnchor) => {
     .attr("dy", dy + 50)
     .attr("dx", dx)
     .attr("text-anchor", textAnchor)
-
-    console.log('Here')
 }

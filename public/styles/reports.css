@@ -21,6 +21,17 @@ ol, ul {
 img {
     height: auto;
 }
+header {
+  padding: 40px;
+  background: #f0c404;
+  display: flex;
+  justify-content: center;
+}
+
+a.brand {
+  text-decoration: none;
+  color: inherit;
+}
 
 main {
   min-height: 100vh;

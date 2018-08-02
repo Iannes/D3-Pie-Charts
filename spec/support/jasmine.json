@@ -6,6 +6,9 @@
   "helpers": [
     "helpers/**/*.js"
   ],
+  "components": [
+    "components/**/*.js"
+  ],
   "stopSpecOnExpectationFailure": false,
   "random": true
 }

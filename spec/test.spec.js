@@ -3,56 +3,34 @@ import localstorage from './helpers/mock-localstorage.js'
 import {createDocument} from './helpers/jsdom.js'
 import App from "../app/lib/app.js";
 import Jasmine from 'jasmine'
-
 const jasmine = new Jasmine();
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-// global.fetch = require('node-fetch');
 
   describe('Test D3.js Donut Chart with jasmine', () => {
     let before;
-    var app = new App()
+    const app = new App()
 
-    beforeEach(() => {
-      before = app.renderPieCharts(40,100,300,300);
-    });
-
-    afterEach(() => {
-      d3.selectAll('svg').remove();
-    });
+    beforeEach(() => before = app.renderPieCharts(40,100,300,300))
+    afterEach(() => d3.selectAll('svg').remove())
 
     describe('The pie charts' ,() => {
       it('should be created', () => {
-        expect(getCharts()).not.toBeNull();
+        expect(createCharts()).not.toBeNull();
       });
     });
-
-    const getCharts = () => {
-      return d3.select('svg');
-    }
+    const createCharts = () => d3.select('svg')
   });
 
   describe('Initializes app', () => {
-    let before;
-    var app = new App()
-
-    beforeEach(() => {
-      before = app.init();
-    });
-
-    afterEach(() => {
-      d3.selectAll('svg').remove();
-    });
 
     describe('Initialization method' ,() => {
       it('should be defined', () => {
-        expect(getCharts()).toBeDefined();
+        expect(defineInit()).toBeDefined();
       });
     });
 
-    const getCharts = () => {
-      return d3.select('svg');
-    }
+    const defineInit = () => d3.select('svg')
   });
 
   describe('Render titles', () => {
@@ -65,9 +43,7 @@ require('isomorphic-fetch');
       before = app.titles(svg, arr, -20, 0, 'middle');
     });
 
-    afterEach(() => {
-      d3.selectAll('svg').remove();
-    });
+    afterEach(() => d3.selectAll('svg').remove())
 
     describe('The function' ,() => {
       it('should render device titles', () => {
@@ -75,32 +51,68 @@ require('isomorphic-fetch');
       });
     });
 
-    const getTitles = () => {
-      return d3.select('svg');
-    }
+    const getTitles = () => d3.select('svg')
   });
 
-describe('Initializes app', () => {
-  let before;
-  var app = new App()
+  describe('App Init() Test:', () => {
 
-  beforeEach(() => {
-    before = app.init();
-  });
+    let app;
 
-  afterEach(() => {
-    d3.selectAll('svg').remove();
-  });
+    beforeEach(() => {app = new App()});
+    afterEach (() => {app = undefined});
 
-  describe('Initialization method' ,() => {
-    it('should be defined', () => {
-      expect(getCharts()).toBeDefined();
+    it("calls the init method", () => {
+        // Ensure the spy was called
+        spyOn(app, 'init')
+        app.init()
+        expect(app.init).toHaveBeenCalled();
     });
-  });
 
-  const getCharts = () => {
-    return d3.select('svg');
-  }
-});
+    it("app.init() method was called with zero arguments", () => {
+        // Ensure the spy was called with the correct number of arguments
+        spyOn(app, 'init')
+        app.init()
+        expect(app.init).toHaveBeenCalledWith();
+    });
+  })
+  describe('App Init() Test:', () => {
+
+    let app;
+
+    beforeEach(() => {app = new App()});
+    afterEach (() => {app = undefined});
+
+    it("calls the init method", () => {
+        // Ensure the spy was called
+        spyOn(app, 'init')
+        app.init()
+        expect(app.init).toHaveBeenCalled();
+    });
+
+    it("app.init() method was called with zero arguments", () => {
+        // Ensure the spy was called with the correct number of arguments
+        spyOn(app, 'init')
+        app.init()
+        expect(app.init).toHaveBeenCalledWith();
+    });
+  })
+
+  describe('Cross dots', () => {
+    let before;
+    const app = require('../app/lib/components/cross.js');
+
+    beforeEach(() => {
+      const svg = d3.select("#pieData").selectAll("div")
+      before = app.cross(svg, 0, -88);
+    });
+
+    afterEach(() => d3.selectAll('svg').remove())
+
+    it("renders four dots within the pie charts", () => {
+      expect(getCross()).toBeDefined();
+    });
+    const getCross = () => d3.select('svg')
+  })
+
 
   jasmine.execute();
