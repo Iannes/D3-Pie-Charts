@@ -2,7 +2,7 @@ export const renderNumbers = (element, devices) => {
 
   devices.map(device => {
     const number = device == 'Tablet' ? 0 : 1
-    const dx = device == 'Tablet' ? -100 : 140
+    const dx = device == 'Tablet' ? -170 : 150
 
 
     element

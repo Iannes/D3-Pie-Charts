@@ -96,7 +96,7 @@ g#doughnut-chart-g-2 #doughnut-chart-path-1 {
 
 text.title {
   font-family: 'Roboto', sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   text-transform: uppercase;
   transform: scale(0.6);
   opacity: 0.5;
@@ -110,7 +110,7 @@ text.title {
 }
 
 .device {
-  font-size:25px;
+  font-size: 18px;
   line-height: 28 px;
 }
 .title-light-green {

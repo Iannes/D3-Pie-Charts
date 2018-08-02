@@ -54,49 +54,6 @@ require('isomorphic-fetch');
     const getTitles = () => d3.select('svg')
   });
 
-  describe('App Init() Test:', () => {
-
-    let app;
-
-    beforeEach(() => {app = new App()});
-    afterEach (() => {app = undefined});
-
-    it("calls the init method", () => {
-        // Ensure the spy was called
-        spyOn(app, 'init')
-        app.init()
-        expect(app.init).toHaveBeenCalled();
-    });
-
-    it("app.init() method was called with zero arguments", () => {
-        // Ensure the spy was called with the correct number of arguments
-        spyOn(app, 'init')
-        app.init()
-        expect(app.init).toHaveBeenCalledWith();
-    });
-  })
-  describe('App Init() Test:', () => {
-
-    let app;
-
-    beforeEach(() => {app = new App()});
-    afterEach (() => {app = undefined});
-
-    it("calls the init method", () => {
-        // Ensure the spy was called
-        spyOn(app, 'init')
-        app.init()
-        expect(app.init).toHaveBeenCalled();
-    });
-
-    it("app.init() method was called with zero arguments", () => {
-        // Ensure the spy was called with the correct number of arguments
-        spyOn(app, 'init')
-        app.init()
-        expect(app.init).toHaveBeenCalledWith();
-    });
-  })
-
   describe('Cross dots', () => {
     let before;
     const app = require('../app/lib/components/cross.js');

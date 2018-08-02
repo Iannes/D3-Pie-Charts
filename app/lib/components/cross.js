@@ -3,10 +3,10 @@ export const cross = (element,x,y) => {
       .attr('class', 'cross')
       .attr("x", x)
       .attr("y", y)
-      .attr("height", 3)
-      .attr("width", 3)
+      .attr("height", 5)
+      .attr("width", 2)
       .style("stroke", 'grey')
       .style("opacity", '1')
       .style("fill", "none")
-      .style("stroke-width", '3px')
+      .style("stroke-width", '2px')
 }

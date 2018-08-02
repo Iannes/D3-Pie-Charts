@@ -1,5 +1,5 @@
 
 [{"tablet_percentage":60,"mobile_percentage":40, "tablet-color": "light-green", "mobile-color": "dark-green","tablet-amount": "120.000€", "smartphone-amount": "80.000€", "total-amount": "200.000€"},
-{"tablet_percentage":40,"mobile_percentage":60, "tablet-color": "dark-blue", "mobile-color": "light-blue","tablet-amount": "20.000.000", "smartphone-amount": "30.000.000", "total-amount": "50.000.000"},
-{"tablet_percentage":20,"mobile_percentage":80, "tablet-color": "orange", "mobile-color": "yellow","tablet-amount": "480.000.000", "smartphone-amount": "120.000.000", "total-amount": "600.000.000"}]
+{"tablet_percentage":40,"mobile_percentage":60, "tablet-color": "light-blue", "mobile-color": "dark-blue","tablet-amount": "20.000.000", "smartphone-amount": "30.000.000", "total-amount": "50.000.000"},
+{"tablet_percentage":20,"mobile_percentage":80, "tablet-color": "yellow", "mobile-color": "orange","tablet-amount": "480.000.000", "smartphone-amount": "120.000.000", "total-amount": "600.000.000"}]
 

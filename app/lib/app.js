@@ -16,9 +16,9 @@ export default class App {
     // Retrieve our data from the database
     d3.json(db_path)
       .then(response => {
-        // Map through all objects and push their values in data array
-        response.map(object => data.push(Object.values(object)))
-        // Use the data array to draw our charts
+
+        response.map(object => data.push(Object.values(object)))// Map through all objects and push their values in data array
+
         const svg = d3.select("#pieData").selectAll("div")
               .data(data)
             .enter()
@@ -28,8 +28,8 @@ export default class App {
                 .attr("width", (r + m) * 4)
                 .attr("height", (r + m) * 3)
                 .attr("class", () => `doughnut-chart`)
-                //Dynamically create id s to style with css
-                .attr("id", (d, i) => `doughnut-chart-${i}`)
+                .attr("id", (d, i) => `doughnut-chart-${i}`) //Dynamically create id s to style with css
+
               .append("g")
                 .attr("id", (d, i) => `doughnut-chart-g-${i}`)
                 .attr("transform", "translate(" + (r + m )+ "," + (r + m) + ")")
@@ -44,13 +44,13 @@ export default class App {
         // Append path
         appendPath(svg, pie, arc)
         // Append titles to the center of the piecharts
-        titles(svg, titlesArr, -20, 0, 'middle')
+        titles(svg, titlesArr, -30, 0, 'middle')
         // Append a border under each piechart
         border(svg)
         // TODO -> create a helper function to call this only once
-        cross(svg, -88, 0)
-        cross(svg, 88, 0)
-        cross(svg, 0, -88)
+        cross(svg, -90, 0)
+        cross(svg, 88 , 0)
+        cross(svg, 0, -90)
         cross(svg, 0, 85)
         // Call three separate functions that accept the same arguments i.e svg, devices
         renderParts(svg, devices)

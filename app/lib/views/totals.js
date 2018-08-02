@@ -4,7 +4,7 @@ export const renderTotals = (element, devices) => {
     devices.map(device => {
 
       const total = device == 'Tablet' ? 4 : 5
-      const dx = device == 'Tablet' ? 25 : 260
+      const dx = device == 'Tablet' ? -45 : 275
 
       element
         .append("text")
