@@ -35,3 +35,4 @@ index.html
 
 - Draw nested svgs in pie charts
 - Refactor `cross.js` function
+- Make first chart consistent with the design
