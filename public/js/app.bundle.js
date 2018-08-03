@@ -142,7 +142,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nvar appendPath = exports.appendPath = function appendPath(svg, pie, arc) {\n   svg.selectAll(\"path\").data(pie).enter().append(\"path\").attr(\"id\", function (d, i) {\n      return \"doughnut-chart-path-\" + i;\n   }).attr(\"d\", arc).attr(\"transform\", \"rotate(145)\");\n};\n\n//# sourceURL=webpack:///./app/lib/components/path.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nvar appendPath = exports.appendPath = function appendPath(svg, pie, arc) {\n   svg.selectAll(\"path\").data(pie).enter().append(\"path\").attr(\"id\", function (d, i) {\n      return \"doughnut-chart-path-\" + i;\n   }).attr(\"d\", arc);\n};\n\n//# sourceURL=webpack:///./app/lib/components/path.js?");
 
 /***/ }),
 

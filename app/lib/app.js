@@ -60,8 +60,6 @@ export default class App {
 
  // This method is called on our main.js and renders the Pie charts
   init () {
-    console.log('App Initialized!')
     this.renderPieCharts(40,100,300,300);
   }
-
 }
